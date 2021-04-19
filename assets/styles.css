@@ -42,12 +42,11 @@ body{
 /* Header Style */
 .header {
     text-align:left;
-    padding-left: 10px 0 0 0;
+    padding-left: 0 0 0 0;
     font-size: 10px;
     background-color: var(--header-color);
     color: var(--secondary-color);
     width: 100%;
-    margin-bottom: 10px;
     z-index: 10;
     position: relative;
 }
@@ -104,6 +103,7 @@ a:not([href]):not([class]):hover {
 
 /* Content */
 .content{
+    margin-top: 100px;
     margin-left: 1%;
     margin-right: 1%;
 }
@@ -113,22 +113,29 @@ a:not([href]):not([class]):hover {
 
 /* This stuff is for the Little-Pascals site and is specific to it */
 
-/* Styles Unordered Lists */
 ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    margin-top: 0px;
+    text-align: center;
     overflow: hidden;
     background-color: var(--header-color);
 }
 
-/* Sets the alignment of the links at the top*/
-li {
-    float: left;
+
+/* Styles the Nav Bar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--header-color);
 }
 
-/* Styles text in the links */
-li a {
+nav .links li {
+    float: left;
+} 
+
+nav .links li a {
     display: block;
     color: var(--secondary-color);
     text-align: center;
@@ -136,8 +143,7 @@ li a {
     text-decoration: none;
 }
 
-/* Sets the style for the menu list on hover*/
-li a:hover {
+nav .links li a:hover {
     background-color: var(--primary-color);
 }
 
