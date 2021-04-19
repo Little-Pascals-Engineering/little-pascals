@@ -107,3 +107,37 @@ a:not([href]):not([class]):hover {
     margin-left: 1%;
     margin-right: 1%;
 }
+
+
+
+
+/* This stuff is for the Little-Pascals site and is specific to it */
+
+/* Styles Unordered Lists */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--header-color);
+}
+
+/* Sets the alignment of the links at the top*/
+li {
+    float: left;
+}
+
+/* Styles text in the links */
+li a {
+    display: block;
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Sets the style for the menu list on hover*/
+li a:hover {
+    background-color: var(--primary-color);
+}
+
