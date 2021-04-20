@@ -125,8 +125,7 @@ ul {
 /* Styles the Nav Bar */
 
 .active {
-    background-color: var(--secondary-color);
-    color: var(--primary-color) !important;
+    background-color: var(--primary-color);
 }
 
 nav {
