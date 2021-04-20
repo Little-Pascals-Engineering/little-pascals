@@ -126,7 +126,7 @@ ul {
 
 .active {
     background-color: var(--secondary-color);
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
 }
 
 nav {
