@@ -122,8 +122,13 @@ ul {
     background-color: var(--header-color);
 }
 
-
 /* Styles the Nav Bar */
+
+.active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
 nav {
     position: fixed;
     top: 0;
