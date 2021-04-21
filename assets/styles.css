@@ -1,7 +1,9 @@
 body{
     /* Colors */
-    --primary-color:#131313;
-    --secondary-color:#b24747;
+    --primary-color:#1a1a1a;
+    --header-text-color:#009bd4;
+    --active-header-color:#64bddf;
+    --text-color:#efefef;
     --link-color:#261010;
     --header-color:#000000;
     
@@ -19,7 +21,9 @@ body{
 body{
     /* Colors */
     --primary-color:#efefef;
-    --secondary-color:#b24747;
+    --header-text-color:#009bd4;
+    --active-header-color:#64bddf;
+    --text-color:#333333;
     --link-color:#e6bebe;
     --header-color:#ffffff;
 }
@@ -31,7 +35,7 @@ body{
     padding: 0px 0 0px 0;
     font-size: 30px;
     background-color: var(--header-color);
-    color: var(--secondary-color);
+    color: var(--header-text-color);
     width: 100%;
     margin-bottom: -30px;
 }
@@ -45,7 +49,7 @@ body{
     padding-left: 0 0 0 0;
     font-size: 10px;
     background-color: var(--header-color);
-    color: var(--secondary-color);
+    color: var(--header-text-color);
     width: 100%;
     z-index: 10;
     position: relative;
@@ -54,7 +58,7 @@ body{
 .link-list {
 text-align:left;
     font-size: 10px;
-    color: var(--secondary-color);
+    color: var(--header-text-color);
     z-index: 10;
     position: relative;
 }
@@ -85,7 +89,7 @@ text-align:left;
 /* Link Styles*/
 
 a {
-    color: var(--secondary-color);
+    color: var(--header-text-color);
     text-decoration: none;
     background-color: transparent;
 }
@@ -103,15 +107,19 @@ a:not([href]):not([class]):hover {
 
 /* Content */
 .content{
-    margin-top: 100px;
-    margin-left: 1%;
-    margin-right: 1%;
+    margin-top: 120px;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
 }
 
 
 
 
 /* This stuff is for the Little-Pascals site and is specific to it */
+
+p {
+    color: var(--text-color);
+}
 
 ul {
     list-style-type: none;
@@ -124,10 +132,6 @@ ul {
 
 /* Styles the Nav Bar */
 
-.active {
-    background-color: var(--primary-color);
-}
-
 nav {
     position: fixed;
     top: 0;
@@ -136,18 +140,29 @@ nav {
 }
 
 nav .links li {
+    display: inline-block;
     float: left;
 } 
 
 nav .links li a {
     display: block;
-    color: var(--secondary-color);
+    color: var(--header-text-color);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 nav .links li a:hover {
+    color: var(--header-text-color);
     background-color: var(--primary-color);
 }
 
+nav .active {
+    color: #454545 !important;
+    background-color: var(--active-header-color);
+}
+
+
+nav .logo {
+    float: left;
+}
