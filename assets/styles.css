@@ -108,8 +108,8 @@ a:not([href]):not([class]):hover {
 /* Content */
 .content{
     margin-top: 20px;
-    margin-left: 7.5%;
-    margin-right: 7.5%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 img {
@@ -131,6 +131,7 @@ p {
 ul {
     list-style-type: none;
     margin: 0;
+    padding-left: 0;
     margin-top: 0px;
     text-align: center;
     overflow: hidden;
@@ -155,7 +156,7 @@ nav {
 
 nav .links li {
     display: inline-block;
-    float: left;
+    float: right;
 } 
 
 nav .links li a {
