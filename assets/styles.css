@@ -132,7 +132,7 @@ nav .logo {
 .about-card {
     width: 950px;
     overflow: hidden;
-    background-color: #efefef;
+    background-color: var(--header-value);
     border-radius: 20px 20px 20px 20px;
     margin-bottom: 20px;
     transition: .3s;
