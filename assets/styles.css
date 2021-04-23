@@ -1,11 +1,12 @@
 body{
     /* Colors */
-    --primary-color:#1a1a1a;
+    --primary-color:#000000;
     --header-text-color:#009bd4;
     --active-header-color:#64bddf;
     --text-color:#efefef;
+    --emph-text-color: #ffffff;
     --link-color:#261010;
-    --header-color:#000000;
+    --header-color:#1a1a1a;
     
         
     /* Basic Styling*/
@@ -20,24 +21,14 @@ body{
 @media (prefers-color-scheme: light) { 
 body{
     /* Colors */
-    --primary-color:#efefef;
+    --primary-color:#ffffff;
     --header-text-color:#009bd4;
     --active-header-color:#64bddf;
     --text-color:#333333;
+    --emph-text-color: #000000;
     --link-color:#e6bebe;
-    --header-color:#ffffff;
+    --header-color:#efefef;
 }
-}
-
-/* Title Style */
-.title{
-    text-align: center;
-    padding: 0px 0 0px 0;
-    font-size: 30px;
-    background-color: var(--header-color);
-    color: var(--header-text-color);
-    width: 100%;
-    margin-bottom: -30px;
 }
 
 /* Darkmode-Lightmode Toggle */
@@ -55,61 +46,12 @@ body{
     position: relative;
 }
 
-.link-list {
-text-align:left;
-    font-size: 10px;
-    color: var(--header-text-color);
-    z-index: 10;
-    position: relative;
-}
-
-/* Center Style*/
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    text-align: center;
-}
-
-/* Logo Style Properties*/
-.logo{
-    display:block;
-    width: 30%;
-    margin-top: -50px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: -100px;
-    text-align: center;
-    z-index: 0;
-    position: relative;
-    pointer-events: none;
-}
-
-/* Link Styles*/
-
-a {
-    color: var(--header-text-color);
-    text-decoration: none;
-    background-color: transparent;
-}
-a:hover {
-    color: var(--link-color);
-}
-a:not([href]):not([class]) {
-    color: inherit;
-    text-decoration: none;
-}
-a:not([href]):not([class]):hover {
-    color: inherit;
-    text-decoration: none;
-}
-
 /* Content */
 .content{
     margin-top: 20px;
     margin-left: 5%;
     margin-right: 5%;
+    font-size: 14px;
 }
 
 img {
@@ -144,8 +86,9 @@ img .header {
     max-height: 10px;
 }
 
-/* Styles the Nav Bar */
 
+
+/* Styles the Nav Bar */
 nav {
     margin-top:0 !important;
     position: sticky;
@@ -180,4 +123,40 @@ nav .active {
 
 nav .logo {
     float: left;
+}
+
+
+
+/* This styles the "about us" cards as well as maybe some other cards */
+
+.about-card {
+    width: 950px;
+    overflow: hidden;
+    background-color: #efefef;
+    border-radius: 20px 20px 20px 20px;
+    margin-bottom: 20px;
+    transition: .3s;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.about-card .container {
+    margin-left: 12px;
+    margin-right: 12px;  
+}
+
+.about-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transition: .3s;
+}
+
+.about-card-header {
+    color: var(--emph-text-color);
+    margin-left: 16px;
+    width: 70%;
+}
+
+.about-card .img {
+    margin-right: 12px;
+    margin-left: -12px;
 }
