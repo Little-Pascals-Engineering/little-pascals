@@ -7,6 +7,8 @@ body{
     --emph-text-color: #ffffff;
     --link-color:#261010;
     --header-color:#1a1a1a;
+    --about-image-size: 200px;
+    --about-shadow-color: rgba(255,255,255,0.2);
     
         
     /* Basic Styling*/
@@ -28,6 +30,7 @@ body{
     --emph-text-color: #000000;
     --link-color:#e6bebe;
     --header-color:#efefef;
+    --about-shadow-color: rgba(0,0,0,0.2);
 }
 }
 
@@ -146,7 +149,7 @@ nav .logo {
 }
 
 .about-card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 var(--about-shadow-color);
     transition: .3s;
 }
 
