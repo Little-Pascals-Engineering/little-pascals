@@ -13,6 +13,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: Cano;
+    src: url("font/cano.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
     /* Colors */
     --primary-color:#000000;
@@ -27,7 +34,7 @@ body{
     
         
     /* Basic Styling*/
-    font-family: Arial, -apple-system, Helvectica, Times New Roman, "Lemon-Milk", Oliciy;
+    font-family: Arial, -apple-system, Helvectica, Times New Roman, "Lemon-Milk", Oliciy, Cano;
     background-color: var(--primary-color);
     margin: 0;
     padding: 0;
@@ -121,7 +128,7 @@ nav h1 {
 }
 
 nav h1 ul .title {
-    font-size: 26px;
+    font-size: 22px;
     font-family: "Lemon-Milk";
 }
 
