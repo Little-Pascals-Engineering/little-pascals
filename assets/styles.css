@@ -69,10 +69,12 @@ h1 {
 
 /* This stuff is for the Little-Pascals site and is specific to it */
 
+/* Colors paragraph text */
 p {
     color: var(--text-color);
 }
 
+/* Unordered list stylization */
 ul {
     list-style-type: none;
     margin: 0;
@@ -92,6 +94,7 @@ img .header {
 
 
 /* Styles the Nav Bar */
+
 nav {
     margin-top:0 !important;
     position: sticky;
@@ -101,6 +104,13 @@ nav {
 }
 
 nav .links li {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
     display: inline-block;
     float: right;
 } 
@@ -162,4 +172,54 @@ nav .logo {
 .about-card .img {
     margin-right: 12px;
     margin-left: -12px;
+}
+    /*Makes the social media links available*/
+.about-card .social {
+    transition: .75s;
+    float: right;
+    height: 400px;
+    width: 100px;
+    background-color: var(--active-header-color);
+    margin-right: -94px;
+}
+
+.about-card .social:hover {
+    transition: 1s;
+    margin-right: -12px;
+}
+
+.about-card .social .head {
+    margin-top: 2px;
+    font-size: 20px;    
+    color: var(--header-color);
+    text-align: center;
+    
+}
+
+.about-card .social:hover .head {
+    
+}
+
+about-card .social .link {
+    display: block;
+    background-color: var(--header-color);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 40px;
+    padding-top: 40px;
+    margin-left: 500px; 
+    margin-right: 500px; 
+}
+
+/* On JD's request, this makes it so you cannot select or click an element */
+.unselectable {
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
