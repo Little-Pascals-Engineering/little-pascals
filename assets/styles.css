@@ -175,12 +175,14 @@ nav .logo {
 }
     /*Makes the social media links available*/
 .about-card .social {
+    overflow: hidden;
     transition: .75s;
     float: right;
-    height: 400px;
+    height: var(--about-image-size);
     width: 100px;
+    border-radius: 0 0 10px 10px;
     background-color: var(--active-header-color);
-    margin-right: -94px;
+    margin-right: -90px;
 }
 
 .about-card .social:hover {
@@ -193,10 +195,6 @@ nav .logo {
     font-size: 20px;    
     color: var(--header-color);
     text-align: center;
-    
-}
-
-.about-card .social:hover .head {
     
 }
 
