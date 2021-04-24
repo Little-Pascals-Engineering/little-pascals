@@ -55,6 +55,7 @@ body{
     margin-left: 5%;
     margin-right: 5%;
     font-size: 14px;
+    overflow-y: scroll;
 }
 
 img {
@@ -143,7 +144,7 @@ nav .logo {
 /* This styles the "about us" cards as well as maybe some other cards */
 
 .about-card {
-    width: 950px;
+    width: 800px;
     overflow: hidden;
     background-color: var(--header-color);
     border-radius: 20px 20px 20px 20px;
@@ -169,6 +170,10 @@ nav .logo {
     width: 70%;
 }
 
+.about-card-header h2 {
+    margin-bottom: 0px;
+}
+
 .about-card .img {
     margin-right: 12px;
     margin-left: -12px;
@@ -183,11 +188,13 @@ nav .logo {
     border-radius: 0 0 10px 10px;
     background-color: var(--active-header-color);
     margin-right: -90px;
+    margin-left: 12px;
 }
 
 .about-card .social:hover {
     transition: 1s;
     margin-right: -12px;
+    margin-left: 12px;
 }
 
 .about-card .social .head {
