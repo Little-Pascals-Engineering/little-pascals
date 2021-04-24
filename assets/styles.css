@@ -200,15 +200,11 @@ nav .logo {
 
 about-card .social .link {
     display: block;
-    background-color: var(--header-color);
+    fill: var(--header-color);
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-    margin-top: 40px;
-    padding-top: 40px;
-    margin-left: 500px; 
-    margin-right: 500px; 
 }
 
 /* On JD's request, this makes it so you cannot select or click an element */
