@@ -51,6 +51,7 @@ body{
 
 /* Content */
 .content{
+    width: 100%;
     margin-top: 20px;
     margin-left: 5%;
     margin-right: 5%;
@@ -172,6 +173,7 @@ nav .logo {
 
 .about-card-header h2 {
     margin-bottom: 0px;
+    font-weight: bolder;
 }
 
 .about-card .img {
