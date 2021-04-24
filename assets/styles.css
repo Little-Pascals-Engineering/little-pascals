@@ -1,3 +1,18 @@
+@font-face {
+    font-family: "Lemon-Milk";
+    src: url("font/lemonmilk-medium.woff2") format("woff2"),
+         url("font/lemonmilk-medium.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Oliciy;
+    src: url("font/Oliciy.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
     /* Colors */
     --primary-color:#000000;
@@ -12,7 +27,7 @@ body{
     
         
     /* Basic Styling*/
-    font-family: Arial, -apple-system, Helvectica, Times New Roman;
+    font-family: Arial, -apple-system, Helvectica, Times New Roman, "Lemon-Milk", Oliciy;
     background-color: var(--primary-color);
     margin: 0;
     padding: 0;
@@ -33,6 +48,7 @@ body{
     --about-shadow-color: rgba(0,0,0,0.2);
 }
 }
+
 
 /* Darkmode-Lightmode Toggle */
 
@@ -91,9 +107,6 @@ ul {
 /* Styles the Nav Bar */
 
 nav {
-    font-family: Helvetica;
-    font-weight: bold;
-    font-style: italic;
     margin-top:0 !important;
     position: sticky;
     top: 0;
@@ -105,6 +118,11 @@ nav h1 {
     margin-top: -5px;
     margin-bottom: 0;
     padding: 0;
+}
+
+nav h1 ul .title {
+    font-size: 26px;
+    font-family: "Lemon-Milk";
 }
 
 nav .links li {
