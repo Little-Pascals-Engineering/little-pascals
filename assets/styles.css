@@ -82,9 +82,7 @@ body{
     margin-bottom: 5%;
 }
 
-.content h1 {
-    color: var(--active-header-color);
-}
+
 
 img {
     display: inline-block;
