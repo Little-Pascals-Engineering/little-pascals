@@ -326,6 +326,7 @@ about-card .social .link {
     transition: 1s;
     padding-top: 4px;
     opacity: 75%;
+    padding-bottom: 4px;
 }
 
 .project-grid .card:hover {
