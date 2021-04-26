@@ -82,6 +82,10 @@ body{
     margin-bottom: 5%;
 }
 
+.content h1 {
+    color: var(--active-header-color);
+}
+
 img {
     display: inline-block;
 }
@@ -274,6 +278,7 @@ about-card .social .link {
 }
 
 .project-grid {
+    position: relative;
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -301,13 +306,40 @@ about-card .social .link {
     padding: 2px;
     border-radius: 4px;
     transition: 1s;
-    
+    opacity: 75%;
 }
 
 .project-grid:hover h1 {
+    opacity: 100%;
+    background-color: var(--header-color);
+}
+
+    /* This is the contents of the actual card aside from the header */
+.project-grid .card {
     position: absolute;
-    top: 0;
-    left: 0;
-    color: var(--active-header-color);
+    bottom: -120px;
+    color: var(--text-color);
+    background-color: var(--header-color);
+    width: 100%;
+    height: 150px;
     transition: 1s;
+    padding-top: 4px;
+    opacity: 75%;
+}
+
+.project-grid .card:hover {
+    transform: translateY(-100px);
+    opacity: 100%;
+}
+
+.project-grid .card h2 {
+    color: var(--active-header-color);
+    margin-top: 0px;
+    padding-left: 6px;
+    padding-right: 4px;
+}
+
+.project-grid .card p {
+    padding-left: 6px;
+    padding-right: 4px;
 }
