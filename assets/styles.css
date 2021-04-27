@@ -357,7 +357,7 @@ about-card .social .link {
 @media only screen and (max-width: 600px) {
 project-grid .card {
     position: absolute;
-    bottom: -100px;
+    bottom: -200px;
     color: var(--text-color);
     background-color: var(--header-color);
     width: 100%;
