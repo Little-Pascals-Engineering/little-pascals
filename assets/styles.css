@@ -321,7 +321,7 @@ about-card .social .link {
     /* This is the contents of the actual card aside from the header */
 .project-grid .card {
     position: absolute;
-    bottom: -120px;
+    bottom: -110px;
     color: var(--text-color);
     background-color: var(--header-color);
     width: 100%;
@@ -352,4 +352,24 @@ about-card .social .link {
     padding-left: 6px;
     padding-right: 4px;
 
+}
+
+@media only screen and (max-width: 600px) {
+project-grid .card {
+    position: absolute;
+    bottom: -110px;
+    color: var(--text-color);
+    background-color: var(--header-color);
+    width: 100%;
+
+    transition: 1s;
+    padding-top: 4px;
+    opacity: 75%;
+    padding-bottom: 6px;
+}
+
+.project-grid .card:hover {
+    transform: translateY(-100px);
+    opacity: 100%;
+}
 }
