@@ -280,7 +280,7 @@ about-card .social .link {
 
 
 /* This section makes the responsive cards on the layout page */
-.photo-grid {
+.tile-grid {
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
