@@ -348,6 +348,7 @@ about-card .social .link {
 .project-grid .card p {
     font-size: minmax(auto, 14px);
     margin-top: 8px;
+    padding-bottom: 6px;
     padding-left: 6px;
     padding-right: 4px;
 
