@@ -201,7 +201,7 @@ nav .logo {
 }
 
 .about-card:hover {
-    box-shadow: 0 8px 16px 0 var(--about-shadow-color);
+    transform: scale(1.05);
     transition: .3s;
 }
 
