@@ -86,6 +86,12 @@ body{
     color: var(--active-header-color);
 }
 
+.content img {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+
 img {
     display: inline-block;
 }
@@ -367,9 +373,9 @@ project-grid .card {
     opacity: 75%;
     padding-bottom: 6px;
 }
+}
 
 .project-grid .card:hover {
     transform: translateY(-100px);
     opacity: 100%;
-}
 }
