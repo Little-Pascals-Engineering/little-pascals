@@ -379,3 +379,58 @@ project-grid .card {
     transform: translateY(-100px);
     opacity: 100%;
 }
+
+
+
+.photo-grid {
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    grid-gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 200px 200px;
+    
+    grid-template-areas:
+        'photo1 photo2 photo2 photo3 photo3 photo4'
+        'photo1 photo5 photo5 photo6 photo6 photo4';
+}
+
+.photos {
+    background-size: cover;
+    border-radius: 4px;
+    transition: .3s;
+    background-size: cover;
+    background-color: var(--header-color);
+}
+
+.photos:hover {
+    transform: scale(1.05);
+    transition: .3s;
+    
+}
+
+.photo1 {
+    grid-area: photo1;
+}
+
+.photo2 {
+    grid-area: photo2;
+}
+
+.photo3 {
+    grid-area: photo3;
+}
+
+.photo4 {
+    grid-area: photo4;
+}
+
+.photo5 {
+    grid-area: photo5;
+}
+
+.photo6 {
+    grid-area: photo6;
+}
