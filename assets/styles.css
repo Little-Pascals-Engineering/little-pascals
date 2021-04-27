@@ -352,6 +352,7 @@ about-card .social .link {
     padding-left: 6px;
     padding-right: 4px;
     height: 20px;
+    overflow: scroll;
 }
 
 @media only screen and (max-width: 600px) {
