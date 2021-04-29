@@ -36,10 +36,10 @@ body {
     --active-header-color:#64bddf;
     --text-color:#333333;
     --emph-text-color: #000000;
-    --link-color:#e6bebe;
     --header-color:#efefef;
     --about-image-size: 200px;
     --about-shadow-color: rgba(0,0,0,0.2);
+    --deemphasized-text-color: #cccccc;
 }
 
 body.dark-theme {
@@ -47,11 +47,11 @@ body.dark-theme {
     --primary-color:#000000;
     --header-text-color:#009bd4;
     --active-header-color:#64bddf;
-    --text-color:#efefef;
+    --text-color:#cccccc;
     --emph-text-color: #ffffff;
-    --link-color:#261010;
     --header-color:#1a1a1a;
     --about-shadow-color: rgba(255,255,255,0.2);
+    --deemphasized-text-color: #333333;
 }
 
 @media (prefers-color-scheme: dark) { 
@@ -60,12 +60,12 @@ body.dark-theme {
         --primary-color:#000000;
         --header-text-color:#009bd4;
         --active-header-color:#64bddf;
-        --text-color:#efefef;
+        --text-color:#cccccc;
         --emph-text-color: #ffffff;
-        --link-color:#261010;
         --header-color:#1a1a1a;
         --about-image-size: 200px;
         --about-shadow-color: rgba(255,255,255,0.2);
+        --deemphasized-text-color: #333333;
     }
     
     body.light theme {
@@ -75,9 +75,9 @@ body.dark-theme {
         --active-header-color:#64bddf;
         --text-color:#333333;
         --emph-text-color: #000000;
-        --link-color:#e6bebe;
         --header-color:#efefef;
         --about-shadow-color: rgba(0,0,0,0.2);
+        --deemphasized-text-color: #cccccc;
     }
 }
 
@@ -203,7 +203,7 @@ ul {
 /* Styles the Nav Bar */
 
 nav {
-    margin-top:0 !important;
+    margin-top: 0;
     position: sticky;
     top: 0;
     width: 100%;
@@ -256,6 +256,51 @@ nav .active {
 
 nav .logo {
     float: left;
+}
+
+
+
+/* Styles the footer of the page */
+footer {
+    position: relative;
+    background-color: var(--header-color);
+    width: 100%;
+    height: 100px;
+}
+
+footer .copyr {
+    font-size: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: var(--deemphasized-text-color);
+    margin-bottom: 5px;
+}
+
+footer .clickable ul {
+    font-size: 14px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style-type: none;
+    overflow: visible;
+}
+
+footer .clickable ul li {
+    display: inline-block;
+}
+
+footer .clickable a {
+    text-decoration: none;
+    color: var(--emph-text-color);
+}
+
+footer .clickable img {
+    transform: translateY(7px);
+    margin-left: 12px;
+    margin-right: 2px;
 }
 
 
@@ -334,7 +379,6 @@ nav .logo {
 
 .about-card .social .link {
     display: inline-block;
-    fill: var(--header-color);
     text-align: center;
     margin-left: auto;
     margin-right: auto;
