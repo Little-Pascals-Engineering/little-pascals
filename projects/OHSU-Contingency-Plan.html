@@ -35,10 +35,132 @@
         </h1>
         </nav>
         
-        
+        <div class="image-header">
+            <h1>OHSU Contingency Plan</h1>
+            <img src="../assets/projects/OHSU.jpg">
+        </div>
         
         <div class="content">
-            <p>This is the projects page. It will be filled with some fake projects as well as a link to the real one under the name of "little-pascals/projects/OSHU-Flow" or something along those lines</p>
+            
+            <h2>Introduction:</h2>
+            
+            <p>
+                In this project, we were hired by Oregon Health and Science University (OHSU) to determine how to supply water to the OHSU campus in the event of a city-wide disaster. 
+            </p>
+
+            <p>
+                From the data OHSU provided, we knew that there were currently 526 beds available in total. However, in the event that a disaster occurs, this amount may increase to accommodate more people, thus needing to be accounted for. Additionally, OHSU is only financially able to support one reservoir in the Portland Metro Area. Hence, we are limited to choosing a single option for the best reservoir to connect to OHSU.
+            </p>
+            
+            <p>
+                Our job was to determine how much electricity, and its associated cost, would be required to pump water to each current bed and any additional beds that OHSU would use given the current usage, a reservoir in the area, and the piping between the reservoir and OHSU. We needed to determine the amount of power that was required for a pump to counteract the effects of head loss (frictional and elevation energy loss) inside of the pipes and keep the water pressure at OHSU at 80psi. 
+            </p>
+            
+            <p>
+                Accounting for maintenance, insurance, and cost of installation associated with each reservoir, we concluded that the best course of action is to connect with the Cemetery Reservoir. 
+            </p>
+
+            <h2>Cost Analysis:</h2>
+            
+            <p>
+            To begin our analysis of each reservoir system, we started by using a Bernoulli equation (an equation used to find the conservation of energy for a flowing fluid) solved for the head of a pump and no minor losses, as we incorporated minor losses into major losses by use of equivalent lengths. The equation we used was hp=(P1g)-(P2g+z2+z1)+hmajand followed the assumption that the water does not have any velocity at either end of the system.
+            </p>
+            
+            <p>
+            To then use the pump head equation we needed to figure out the elevation difference between each of the reservoirs and OHSU: 
+            </p>
+            
+            <p> <b>Table 1.</b> Elevation difference between OHSU and respective reservoirs.<br> <img style="width: 45%" src="table%201.png" ></p>
+            
+            
+            <p>
+            Inside of our calculator file, all of the calculations were done at once to avoid compounding errors, so the elevation difference is not explicitly stated inside the file.
+            </p>
+            
+            <p>
+            Next, we found out which pipes were not circular, determined their area, and then used the equation Dh=4AhP to find the equivalent hydraulic diameter (Dh). This was done using the pipe area (Ah) and the pipe’s perimeter (P).
+            </p>
+            
+            <p>
+            We used the equivalent hydraulic diameters of the non-circular pipes and the diameters of the circular pipes to get the pipe area for each segment, which was necessary in calculating the velocity of the water flowing through each section of pipe. 
+            </p>
+            
+            <p>
+            To then figure out the velocity of the water flowing through each section of pipe we used the maximum cubic feet of water used per month converted into seconds (divide the number by 2.592x10^6) and then used the equation V=Q/A where Vis the velocity in ft/s, Q is the volumetric flow rate of water in ft3/s, and A is the area of the pipe in ft2.
+            </p>
+            
+            <p>
+            For the long straight sections of pipe, to determine the head loss, we employed a unitless number, called the Reynolds number for each segment of straight pipe. This number allowed us to more easily see how much each section was losing energy by using the equation Re=VD where Vis the velocity in ft/s, Dis the pipe diameter in ft, and is the kinematic viscosity of water (=1.21010-5ft2/s assuming the water is at 60F).
+            </p>
+            
+            <p>
+            From there, if the Reynolds number was less than 2000, we would have a laminar (smooth) flow, and if it was above we would have turbulent flow. Using the Reynolds number for each segment, we could find what the friction factor for each segment of straight pipe using f=64Re for smooth flow and f=1-1.8log10((6.9Re)+(/D3.7)1.11) for turbulent flow where is the pipe roughness in ft and D is the diameter of the pipe in ft.
+            </p>
+            
+            <p>
+            For the elbows, valves, and gates in the piping we employed a loss coefficient, k, for each. These coefficients are tabulated values for specified types of elbows, valves, and gates. We used the loss coefficients along with the diameter and friction factor of each of these components in the equation Le=kDfto get an equivalent length—how much energy the element would use were it a segment of straight pipe. For sections of the pipe where diameter changes, but no element is present, we used k=(1-A1A2)2 where A1 and A2 are the respective areas of each of the smaller and larger diameters sections.
+            </p>
+            
+            <p>
+            To find the total major head loss, we employed the equation hmaj, tot=infLV22gD where L can be the length or the equivalent length. The previous equation is a sum of the major head loss in each component—both straight pipe segments and components.
+            </p>
+            
+            <p>
+            Finally, with the total major head loss found, we used the fact that the gauge pressure was P1=0psi at the surface of any reservoir, that P2=80psi was the water pressure in the piping at OHSU, that g=32.2ft/s2, that =1.938 slugs/ft3 , and that elevation change wasz1+z2, to use the equation hp=(P1g)-(P2g+z2+z1)+hmaj,tot  to find the head of the pump. We then took the pump head and converted it to pressure using P=hp2.31ft/psi. With pressure, we could then get the power required for all 526 beds using the equation Power=PQ where Q is the volumetric flow rate of the water used and P is the pressure supplied by the pump.
+            </p>
+            
+            <p>
+            The cost of the power was defined as $0.127per watt for businesses on average (SOURCE?) and using this, we could figure out the cost of water for 526 beds. For each additional bed, the cost of water is then the cost for 526 beds divided by 526. Finally, the total cost to use any one of the reservoirs was found by adding the cost of power for 526 beds, the installation cost (divided by 365 for the first year and then removed for subsequent years), the lease per day (dividing the per year cost by 365), and the insurance cost per day (dividing per year cost by 365). 
+            </p>
+            
+            <h2>Results:</h2>
+            
+            <p>
+            By the end of our analysis, we found that the cost between the least and most expensive reservoir was very significant, but that for the cheapest reservoir, the cost of renovating the piping was negligible. Below are tables providing the cost per day of each reservoir.
+            </p>
+            
+            <p>
+            <b>Table 2.</b> Cost to run the pump per day and year relative to each reservoir. <br> <img style="width: 45%" src="table%202.png" ></p>
+            </p>
+            
+            <p>
+            The cost increase per additional bed does not vary significantly between different reservoirs. The cost per bed between reservoirs varies by around a thousandth of a cent.
+            </p>
+            
+            <p>
+            <b>Table 3.</b> Cost per additional bed per day and year relative to each reservoir. <br> <img style="width: 45%" src="table%203.png" ></p>
+            </p>
+            
+            <p>
+            From the calculations, it is evident that the economical benefit of refitting the concrete pipes to commercial steel is negligible. This difference between the original pipes and the renovated pipes is best illustrated in the figure below.
+            </p>
+            
+            <p>
+            <b>Figure 1.</b> Cost per day of each original reservoir vs. renovated reservoir <br> <img style="width: 45%" src="fig%201.png" >
+            </p>
+            
+            <p>
+            <b>Figure 2.</b> Cost per additional bed of each original reservoir vs. renovated reservoir <br> <img style="width: 45%" src="fig%202.png">
+            </p>
+            
+            <h2>Conclusion:</h2>
+            <p>
+            Our firm found that the most ideal reservoir to supply water to OHSU in the event of a city-wide disaster is the Cemetery Reservoir. Although the cost per additional bed is slightly higher than for the other reservoirs, the Cemetery Reservoir is the most cost effective reservoir, costing OHSU only $280.97 per day.
+            </p>
+            
+            <h2>Sources:</h2>
+            <p> 
+            Gerhart, Philip, et al. Munson, Young and Okiishi’s Fundamentals of Fluid Mechanics, 8th Edition. 8th ed., Wiley, 2015.
+            </p>  
+            
+            <p> 
+            ENERGY COST SOURCE
+            </p>
+            
+            
+            
+            
+            
         </div>
     </body>
 

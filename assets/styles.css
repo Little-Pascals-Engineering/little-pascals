@@ -20,19 +20,8 @@
     font-style: normal;
 }
 
-body{
-    /* Colors */
-    --primary-color:#000000;
-    --header-text-color:#009bd4;
-    --active-header-color:#64bddf;
-    --text-color:#efefef;
-    --emph-text-color: #ffffff;
-    --link-color:#261010;
-    --header-color:#1a1a1a;
-    --about-image-size: 200px;
-    --about-shadow-color: rgba(255,255,255,0.2);
-    
-        
+/* There are two in each in reversed order to make it so the colors can be toggled */
+body {
     /* Basic Styling*/
     font-family: Arial, -apple-system, Helvectica, Times New Roman, "Lemon-Milk", Oliciy, Cano;
     background-color: var(--primary-color);
@@ -40,11 +29,8 @@ body{
     padding: 0;
     color: var(--secondary-color);
     display: block;
-}
-
-@media (prefers-color-scheme: light) { 
-body{
-    /* Colors */
+    
+    /* Light Colors */
     --primary-color:#ffffff;
     --header-text-color:#009bd4;
     --active-header-color:#64bddf;
@@ -52,12 +38,96 @@ body{
     --emph-text-color: #000000;
     --link-color:#e6bebe;
     --header-color:#efefef;
+    --about-image-size: 200px;
     --about-shadow-color: rgba(0,0,0,0.2);
 }
+
+body.dark-theme {
+    /* Dark Colors */
+    --primary-color:#000000;
+    --header-text-color:#009bd4;
+    --active-header-color:#64bddf;
+    --text-color:#efefef;
+    --emph-text-color: #ffffff;
+    --link-color:#261010;
+    --header-color:#1a1a1a;
+    --about-shadow-color: rgba(255,255,255,0.2);
 }
+
+@media (prefers-color-scheme: dark) { 
+    body {
+        /* Dark Colors */
+        --primary-color:#000000;
+        --header-text-color:#009bd4;
+        --active-header-color:#64bddf;
+        --text-color:#efefef;
+        --emph-text-color: #ffffff;
+        --link-color:#261010;
+        --header-color:#1a1a1a;
+        --about-image-size: 200px;
+        --about-shadow-color: rgba(255,255,255,0.2);
+    }
+    
+    body.light theme {
+        /* Light Colors */
+        --primary-color:#ffffff;
+        --header-text-color:#009bd4;
+        --active-header-color:#64bddf;
+        --text-color:#333333;
+        --emph-text-color: #000000;
+        --link-color:#e6bebe;
+        --header-color:#efefef;
+        --about-shadow-color: rgba(0,0,0,0.2);
+    }
+}
+
 
 
 /* Darkmode-Lightmode Toggle */
+
+.image-header {
+    position: relative;
+    display: inline-block;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 4px;
+    transition: .3s;
+    overflow: hidden;
+    width: 90%;
+    transition: .3s;
+}
+
+.image-header:hover {
+    margin-top: 40px;
+    transform: scale(1.05);
+}
+
+.image-header h1 {
+    font-size: 50px;
+    position: absolute;
+    margin-left: 32px;
+    margin-right: 10px;
+    top: 0;
+    left: 0;
+    color: var(--active-header-color);
+    background-color: var(--header-color);
+    padding: 2px;
+    border-radius: 4px;
+    opacity: 75%;
+}
+
+.image-header:hover h1 {
+    opacity: 100%;
+    background-color: var(--header-color);
+}
+
+.image-header img {
+    width: 100%;
+    border-radius: 4px;
+}
+
 
 
 /* Header Style */
@@ -86,11 +156,6 @@ body{
     color: var(--active-header-color);
 }
 
-.content img {
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
 img {
     display: inline-block;
 }
@@ -106,6 +171,11 @@ img .nav {
 /* Colors paragraph text */
 p {
     color: var(--text-color);
+}
+
+p .bold {
+    font-weight: bolder;
+    display: inline;
 }
 
 /* Unordered list stylization */
@@ -223,7 +293,7 @@ nav .logo {
     color: var(--active-header-color);
 }
 
-.about-card .img {
+.about-card img {
     margin-right: 12px;
     margin-left: -12px;
 }
@@ -381,6 +451,7 @@ project-grid .card {
 
 
 
+/* This annoyingly long amount of code only makes the images at the top of the front page possible */
 .photo-grid {
     border-radius: 4px;
     margin-top: 20px;
@@ -400,7 +471,6 @@ project-grid .card {
     background-size: cover;
     border-radius: 4px;
     transition: .3s;
-    background-size: cover;
     background-color: var(--header-color);
 }
 
@@ -432,4 +502,73 @@ project-grid .card {
 
 .photo6 {
     grid-area: photo6;
+}
+
+
+
+/* This is the css for the light-dark toggle switch */
+.light-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.light-switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1a1a1a;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #efefef;
+  transition: .4s;
+}
+input:checked + .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #1a1a1a;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #efefef;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #1a1a1a;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 500px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
