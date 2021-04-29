@@ -402,6 +402,10 @@ nav .logo {
     background-color: var(--header-color);
 }
 
+.project-grid h2 {
+    margin-bottom: 0.83em; /* This should be default value */
+}
+
     /* This is the contents of the actual card aside from the header */
 .project-grid .card {
     position: absolute;
