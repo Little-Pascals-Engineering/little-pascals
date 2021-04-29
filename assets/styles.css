@@ -157,6 +157,14 @@ body.dark-theme {
     margin-bottom: -12px;
 }
 
+.content p b {
+    color: var(--active-header-color);
+}
+
+.content p a {
+    color: var(--emph-text-color);
+}
+
 img {
     display: inline-block;
 }
