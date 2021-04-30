@@ -14,7 +14,20 @@
         <!--sets  the character set to UTF-8-->
         <meta charset="UTF-8">
         <!--gives the site/file a description-->
-        <meta name="description" content="Little Pascals Engineering. Serving the Portland area since 1951."
+        <meta name="description" content="Little Pascals Engineering. Serving the Portland area since 1951.">
+        
+        <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+        <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+            fontCache: 'global'
+        }
+        };
+        </script>
+              
     </head>
         
     
@@ -53,7 +66,7 @@
             </p>
             
             <p>
-                Our job was to determine how much electricity, and its associated cost, would be required to pump water to each current bed and any additional beds that OHSU would use given the current usage, a reservoir in the area, and the piping between the reservoir and OHSU. We needed to determine the amount of power that was required for a pump to counteract the effects of head loss (frictional and elevation energy loss) inside of the pipes and keep the water pressure at OHSU at 80psi. 
+                Our job was to determine how much electricity, and its associated cost, would be required to pump water to each current bed and any additional beds that OHSU would use given the current usage, a reservoir in the area, and the piping between the reservoir and OHSU. We needed to determine the amount of power that was required for a pump to counteract the effects of head loss (frictional and elevation energy loss) inside of the pipes and keep the water pressure at OHSU at $80psi$. 
             </p>
             
             <p>
@@ -63,7 +76,7 @@
             <h2>Cost Analysis:</h2>
             
             <p>
-                To begin our analysis of each reservoir system, we started by using a Bernoulli equation (an equation used to find the conservation of energy for a flowing fluid) solved for the head of a pump and no minor losses, as we incorporated minor losses into major losses by use of equivalent lengths. The equation we used was hp=(P1g)-(P2g+z2+z1)+hmajand followed the assumption that the water does not have any velocity at either end of the system.
+                To begin our analysis of each reservoir system, we started by using a Bernoulli equation (an equation used to find the conservation of energy for a flowing fluid) solved for the head of a pump and no minor losses, as we incorporated minor losses into major losses by use of equivalent lengths. The equation we used was $h_{p} = \frac{P_{1}}{\rho g} - (\frac{P_{2}}{\rho g}+z_{2} +z_{1}) + h_{maj}$ and followed the assumption that the water does not have any velocity at either end of the system.
             </p>
             
             <p>
@@ -78,7 +91,7 @@
             </p>
             
             <p>
-            Next, we found out which pipes were not circular, determined their area, and then used the equation Dh=4AhP to find the equivalent hydraulic diameter (Dh). This was done using the pipe area (Ah) and the pipe’s perimeter (P).
+            Next, we found out which pipes were not circular, determined their area, and then used the equation $D_h=\frac{4\cdot A_h}{P}$ to find the equivalent hydraulic diameter ($Dh$). This was done using the pipe area ($A_h$) and the pipe’s perimeter ($P$).
             </p>
             
             <p>
@@ -86,31 +99,31 @@
             </p>
             
             <p>
-            To then figure out the velocity of the water flowing through each section of pipe we used the maximum cubic feet of water used per month converted into seconds (divide the number by 2.592x10^6) and then used the equation V=Q/A where Vis the velocity in ft/s, Q is the volumetric flow rate of water in ft3/s, and A is the area of the pipe in ft2.
+            To then figure out the velocity of the water flowing through each section of pipe we used the maximum cubic feet of water used per month converted into seconds (divide the number by 2.592x10^6) and then used the equation $V=Q/A$ where $V$ is the velocity in $ft/s$, $Q$ is the volumetric flow rate of water in $ft^3/s$, and $A$ is the area of the pipe in $ft^2$.
             </p>
             
             <p>
-            For the long straight sections of pipe, to determine the head loss, we employed a unitless number, called the Reynolds number for each segment of straight pipe. This number allowed us to more easily see how much each section was losing energy by using the equation Re=VD where Vis the velocity in ft/s, Dis the pipe diameter in ft, and is the kinematic viscosity of water (=1.21010-5ft2/s assuming the water is at 60F).
+            For the long straight sections of pipe, to determine the head loss, we employed a unitless number, called the Reynolds number for each segment of straight pipe. This number allowed us to more easily see how much each section was losing energy by using the equation $Re=\frac{V\cdot D}{\nu}$ where $V$ is the velocity in $ft/s$, $D$ is the pipe diameter in $ft$, and is the kinematic viscosity of water ($\rho=1.210\cdot 10^{-5} ft^2/s$ assuming the water is at $60^\circ F$).
             </p>
             
             <p>
-            From there, if the Reynolds number was less than 2000, we would have a laminar (smooth) flow, and if it was above we would have turbulent flow. Using the Reynolds number for each segment, we could find what the friction factor for each segment of straight pipe using f=64Re for smooth flow and f=1-1.8log10((6.9Re)+(/D3.7)1.11) for turbulent flow where is the pipe roughness in ft and D is the diameter of the pipe in ft.
+            From there, if the Reynolds number was less than 2000, we would have a laminar (smooth) flow, and if it was above we would have turbulent flow. Using the Reynolds number for each segment, we could find what the friction factor for each segment of straight pipe using $f=\frac{64}{Re}$ for smooth flow and $f= \frac{1}{-1.8\cdot\log_{10}((\frac{6.9}{Re})+(\frac{\epsilon/d}{3.7})^{1.11}))}$ for turbulent flow where $\epsilon$ is the pipe roughness in $ft$ and $D$ is the diameter of the pipe in $ft$.
             </p>
             
             <p>
-            For the elbows, valves, and gates in the piping we employed a loss coefficient, k, for each. These coefficients are tabulated values for specified types of elbows, valves, and gates. We used the loss coefficients along with the diameter and friction factor of each of these components in the equation Le=kDfto get an equivalent length—how much energy the element would use were it a segment of straight pipe. For sections of the pipe where diameter changes, but no element is present, we used k=(1-A1A2)2 where A1 and A2 are the respective areas of each of the smaller and larger diameters sections.
+            For the elbows, valves, and gates in the piping we employed a loss coefficient, $k$, for each. These coefficients are tabulated values for specified types of elbows, valves, and gates. We used the loss coefficients along with the diameter and friction factor of each of these components in the equation $L_e=\frac{k\cdot D}{f}$ to get an equivalent length—how much energy the element would use were it a segment of straight pipe. For sections of the pipe where diameter changes, but no element is present, we used $k=(1-\frac{A_1}{A_2})^2$ where $A_1$ and $A_2$ are the respective areas of each of the smaller and larger diameters sections.
             </p>
             
             <p>
-            To find the total major head loss, we employed the equation hmaj, tot=infLV22gD where L can be the length or the equivalent length. The previous equation is a sum of the major head loss in each component—both straight pipe segments and components.
+            To find the total major head loss, we employed the equation $h_{maj, tot}=\sum_{i}^{n} \frac{f\cdot L \cdot V^2}{2\cdot g \cdot D}$ where $L$ can be the length or the equivalent length. The previous equation is a sum of the major head loss in each component—both straight pipe segments and components.
             </p>
             
             <p>
-            Finally, with the total major head loss found, we used the fact that the gauge pressure was P1=0psi at the surface of any reservoir, that P2=80psi was the water pressure in the piping at OHSU, that g=32.2ft/s2, that =1.938 slugs/ft3 , and that elevation change wasz1+z2, to use the equation hp=(P1g)-(P2g+z2+z1)+hmaj,tot  to find the head of the pump. We then took the pump head and converted it to pressure using P=hp2.31ft/psi. With pressure, we could then get the power required for all 526 beds using the equation Power=PQ where Q is the volumetric flow rate of the water used and P is the pressure supplied by the pump.
+            Finally, with the total major head loss found, we used the fact that the gauge pressure was $P_1=0psi$ at the surface of any reservoir, that $P_2=80psi$ was the water pressure in the piping at OHSU, that $g=32.2ft/s^2$, that $\rho=1.938 slugs/ft^3$, and that elevation change was $z1+z2$, to use the equation $h_{p} = \frac{P_{1}}{\rho g} - (\frac{P_{2}}{\rho g}+z_{2} +z_{1}) + h_{maj,tot}$  to find the head of the pump. We then took the pump head and converted it to pressure using $P=\frac{hp}{2.31ft/psi}$. With pressure, we could then get the power required for all 526 beds using the equation $Power=P\cdot Q$ where $Q$ is the volumetric flow rate of the water used and $P$ is the pressure supplied by the pump.
             </p>
             
             <p>
-            The cost of the power was defined as $0.127per watt for businesses on average (SOURCE?) and using this, we could figure out the cost of water for 526 beds. For each additional bed, the cost of water is then the cost for 526 beds divided by 526. Finally, the total cost to use any one of the reservoirs was found by adding the cost of power for 526 beds, the installation cost (divided by 365 for the first year and then removed for subsequent years), the lease per day (dividing the per year cost by 365), and the insurance cost per day (dividing per year cost by 365). 
+            The cost of the power was defined as $0.127per watt for businesses on average and using this, we could figure out the cost of water for 526 beds. For each additional bed, the cost of water is then the cost for 526 beds divided by 526. Finally, the total cost to use any one of the reservoirs was found by adding the cost of power for 526 beds, the installation cost (divided by 365 for the first year and then removed for subsequent years), the lease per day (dividing the per year cost by 365), and the insurance cost per day (dividing per year cost by 365). 
             </p>
             
             <h2>Results:</h2>
@@ -158,6 +171,13 @@
             </p>
             
             <h2>How to Use the Calculator:</h2>
+            
+            <p>To use the calculator with the present values, simply make sure that the file “TLP_Project1_Calculator” is inside the data folder alongside the .csv files. In Jupyter Notebook, open the calculator, click “cell” in the nav bar, and then click “run all”.
+            </p>
+            
+            <p>
+            If you wish to enter more data into the .csv files, do so in the same format they are currently in written in.
+            </p>
             
             
             
