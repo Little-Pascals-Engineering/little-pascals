@@ -76,7 +76,7 @@
             <h2>Cost Analysis:</h2>
             
             <p>
-                To begin our analysis of each reservoir system, we started by using a Bernoulli equation (an equation used to find the conservation of energy for a flowing fluid) solved for the head of a pump and no minor losses, as we incorporated minor losses into major losses by use of equivalent lengths. The equation we used was $h_{p} = \frac{P_{1}}{\rho g} - (\frac{P_{2}}{\rho g}+z_{2} +z_{1}) + h_{maj}$ and followed the assumption that the water does not have any velocity at either end of the system.
+                To begin our analysis of each reservoir system, we started by using a Bernoulli equation (an equation used to find the conservation of energy for a flowing fluid) solved for the head of a pump and no minor losses, as we incorporated minor losses into major losses by use of equivalent lengths. The equation we used was $h_{p} = (\frac{P_{1}}{\rho g}+z_{1}) - (\frac{P_{2}}{\rho g}+z_{2}) + h_{maj}$ and followed the assumption that the water does not have any velocity at either end of the system.
             </p>
             
             <p>
@@ -119,7 +119,7 @@
             </p>
             
             <p>
-            Finally, with the total major head loss found, we used the fact that the gauge pressure was $P_1=0psi$ at the surface of any reservoir, that $P_2=80psi$ was the water pressure in the piping at OHSU, that $g=32.2ft/s^2$, that $\rho=1.938 slugs/ft^3$, and that elevation change was $z1+z2$, to use the equation $h_{p} = \frac{P_{1}}{\rho g} - (\frac{P_{2}}{\rho g}+z_{2} +z_{1}) + h_{maj,tot}$  to find the head of the pump. We then took the pump head and converted it to pressure using $P=\frac{hp}{2.31ft/psi}$. With pressure, we could then get the power required for all 526 beds using the equation $Power=P\cdot Q$ where $Q$ is the volumetric flow rate of the water used and $P$ is the pressure supplied by the pump.
+            Finally, with the total major head loss found, we used the fact that the gauge pressure was $P_1=0psi$ at the surface of any reservoir, that $P_2=80psi$ was the water pressure in the piping at OHSU, that $g=32.2ft/s^2$, that $\rho=1.938 slugs/ft^3$, and that elevation change was $z1+z2$, to use the equation $h_{p} = (\frac{P_{1}}{\rho g}+z_{1}) - (\frac{P_{2}}{\rho g}+z_{2}) + h_{maj,tot}$  to find the head of the pump. We then took the pump head and converted it to pressure using $P=\frac{hp}{2.31ft/psi}$. With pressure, we could then get the power required for all 526 beds using the equation $Power=P\cdot Q$ where $Q$ is the volumetric flow rate of the water used and $P$ is the pressure supplied by the pump.
             </p>
             
             <p>
