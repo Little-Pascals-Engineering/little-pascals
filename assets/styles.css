@@ -143,6 +143,43 @@ body.dark-theme {
     
 }
 
+/* Download Button */
+.download-button {
+    border-radius: 10px;
+    color: #efefef;
+    background-color: var(--active-header-color);
+    width: 180px;
+    text-align: center;
+}
+
+.download-button:active {
+    color: #cccccc;
+}
+
+.download-button a {
+    text-decoration: none;
+    color: #efefef;
+}
+
+.download-button a:hover {
+    color: #efefef;
+}
+
+.download-button a:active {
+    color: #cccccc;
+}
+
+.download-button h3 {
+    padding: 10px;
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 /* Content */
 .content{
     margin-top: 20px;
