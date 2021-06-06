@@ -15,19 +15,6 @@
         <meta charset="UTF-8">
         <!--gives the site/file a description-->
         <meta name="description" content="Little Pascals Engineering. Serving the Portland area since 2010.">
-        
-        <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-        <script>
-        MathJax = {
-        tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']]
-        },
-        svg: {
-            fontCache: 'global'
-        }
-        };
-        </script>
-              
     </head>
         
     
@@ -57,16 +44,105 @@
             
             <h2>Introduction:</h2>
             
+            <p>
+            In this project, we were sub-contracted by Fake Trucks Inc. to determine the most optimal cab model, oil delivery, and filtration system for use in remodeling their fleet of 7,500 trucks. The overarching goal of this project was to determine the most efficient set of pumps (one for oil delivery and one for oil filtration), filter, and cab model while performing a cost-benefit analysis to optimize efficiency for cost. 
+            </p>
+
+            <p>
+            Based on the data provided by Fake Trucks Inc., we need to analyze three different truck cab models, A, B, and C, five different filters, and three different pumps: the VOLVO pump, PAI pump, and the CUMIN pump. Unfortunately the choice is not made easy as there is a range of around 1 million dollars and 34% efficiency to remodel the entire fleet of trucks depending on what is chosen.
+             </p>
+
+            <p>
+            Taking into account the standard power requirement of 412 hp for a typical fleet, we determined the model A cab with a VOLVO pump and filter 4 is the most cost effective choice as it delivers an appropriate efficiency for the cost of remodeling the entire fleet.
+            </p>
 
             <h2>Cost Analysis:</h2>
             
+            <p>
+            The first step of our analysis was to determine the drag coefficient of each of the cab models. This was done using the provided drag data for each of the cabs.
+            </p>
+            
+            <p>
+            With the drag coefficient for each of the models found, we could then find the force caused by drag using the density of the air, the surface area of the cab, and the speed at which the trucks will be going.
+            </p>
+            
+            <p>
+            Using the drag force, we can then calculate the estimated power required to push through the air by multiplying the maximum and minimum design speed (velocity) of the trucks and the force of drag we had previously found. In addition to this power required, we also add the standard power requirement of a fleet, 412 hp. Below are the tabulated results of the calculations performed. 
+            </p>
+            
+            <p style="text-align: center"> <b>Table 1.</b> Maximum and Minimum power requirements for each cab model.<br> <img style="width: 45%" src="TEFP/Table%201.png" ></p>
+            
+            <p>
+            From the MATLAB code provided to us by Fake Trucks Inc., we were given the flow rates for each of the models in liters per hour. To make these values easier to calculate, we converted the flowrates to cubic feet per second. 
+            </p>
+            
+            <p style="text-align: center"> <b>Table 2.</b> Flowrate for each model in liters per hour and cubic feet per second.<br> <img style="width: 45%" src="TEFP/Table%202.png" ></p>
+            
+            <p>
+            Our next step for our analysis was to find how much energy was being taken by the piping within the system in each truck’s engine. Finding this allowed us to take into account how much additional power needed to be added to the system in order to counteract the energy taken by the piping system. While doing this analysis, we assumed any change in height had negligible effect on the energy taken by the piping system. 
+            </p>
+
+            <p>
+            The next section of our analysis consisted of analyzing the system curve, which shows the effect of the flowrate on the head rise (energy in or out of the system) for all of the delivery pumps. Below is the figure for our selected pump, the VOLVO delivery pump.
+            </p>
+            
+            <p style="text-align: center">
+            <b>Figure 1.</b> System Curve of VOLVO Delivery Pump. <br> <img style="width: 45%" src="TEFP/Volvo%20Pump%20Curve.png" >
+            </p>
+            
+            <p>
+            Also provided is the efficiency curve of the VOLVO delivery pump with respect to the flowate. Our maximum efficiency occurs at a flowrate of Q=0.0024 ft^3 and is an efficiency of 75.43%.
+            </p>
+            
+            <p>
+            The blue line represents the experimental head rise of the pump and the red line is the system curve, indicating the amount of pressure needed for the pump to function. Their intersection, where the red dot should be but is not due to limitations of the coding language of the workbook, is the operating point of the system. In this case the operating point for the VOLVO delivery pump occurs at a flowrate of Q=0.002531 ft^3/s with a pressure head of 1.622 ft.
+            </p>
+            
+            <p style="text-align: center">
+            <b>Figure 2.</b> VOLVO Efficiency Curve. <br> <img style="width: 45%" src="TEFP/Volvo%20Efficiency%20Curve.png" >
+            </p>
+            
+            <p>
+            In our final system analysis section, we analyzed all of the different filter pumps against all of the different filters. The data presented here is for the select filter and filter pump system. The operating point of  the VOLVO filter pump occurs at a flowrate of Q=0.00249 ft^3/s with a pressure head of 1.735 ft.
+            </p>
+            
+            <p style="text-align: center">
+            <b>Figure 3.</b> System Curve of Filter 5 VOLVO Filter Pump. <br> <img style="width: 45%" src="TEFP/Volvo%20Filter%205%20Pump%20Curve.png" >
+            </p>
+            
+            <p>
+            Our next step was to establish which combination of cab model, delivery pump, filter, and filter pump was optimal. We took the operating flow rates and the system flow rates of the delivery pumps, their efficiencies, and the cab model data to use them and find the most efficient delivery pump system-cab model combination. Finally, we compared all of the filter pump and filter operating points to order the filter systems from best to worst.
+            </p>
+            
+            <p>
+            Lastly, we calculated and tabulated the efficiency of the overall system so that we could compare the cost to remodel the entire fleet versus efficiency of the entire system based on the filter choice.
+            </p>
+            
+            <p style="text-align: center"> <b>Table 3.</b> Comparison of different efficiencies of cab model, pump, and fitler models.<br> <img style="width: 45%" src="TEFP/Table%203.png" ></p>
             
             <h2>Results:</h2>
             
+            <p>
+            After our analysis, we found that the most efficient cab model was Model A and that the most efficient pumps were the VOLVO pumps for both delivery and filtration. To determine which filter was best, we evaluated the cost and efficiency of each filter to the likelihood of failure in the future to decide which was best. Below are the cost and associated efficiencies for each filter.
+            </p>
+            
+            <p style="text-align: center"> <b>Table 4.</b> Cost and associated efficiency for each filter.<br> <img style="width: 45%" src="TEFP/Table%204.png" ></p>
+            
+            <p>
+            From the table above, filter 2 has the highest efficiency at 99%, but it also has the highest cost. Filter 5 has the second highest efficiency at 92% and would cost $300,000 less to equip the entire fleet compared to filter 2. The third most efficient filter is filter 4 at 87%. Filter 4 would cost approximately $560,000 less than filter 2 at an efficiency decrease of 12%.
+            </p>
             
             <h2>Conclusion:</h2>
             
+            <p>
+            After comparing the cost and efficiency of each model, pump and filter, our firm found that the best choice for Fake Trucks Inc. is cab Model A with VOLVO delivery and filter pumps and filter 4. Although filter 4 does not provide the best efficiency of all of the filters, it is the most cost effective solution while still delivering sufficient power.
+            </p>
+            
             <h2>Sources:</h2>
+            
+            <p>
+            Gerhart, Philip, et al. Munson, Young and Okiishi’s Fundamentals of Fluid Mechanics, 8th Edition. 8th ed., Wiley, 2015.
+            </p>
             
             <h2>How to Use the Calculator:</h2>
             
